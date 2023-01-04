@@ -24,7 +24,7 @@ import com.aosp.device.DeviceSettings.Utils;
 
 public class DCModeSwitch implements OnPreferenceChangeListener {
 
-    private static final String FILE = "/sys/devices/platform/soc/ae00000.qcom,mdss_mdp/drm/card0/card0-DSI-1/dimlayer_bl_en";
+    private static final String FILE = "/sys/devices/platform/soc/soc:qcom,dsi-display-primary/dc_dim";
 
     public static String getFile() {
         if (Utils.fileWritable(FILE)) {
