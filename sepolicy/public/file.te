@@ -1,2 +1,4 @@
 # sysfs
 type sysfs_motor, sysfs_type, fs_type;
+
+type sysfs_kprofiles, sysfs_type, fs_type;
