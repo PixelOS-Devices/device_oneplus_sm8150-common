@@ -179,3 +179,6 @@ ro.soc.model=SM8150
 
 # Zygote
 zygote.critical_window.minute=10
+
+# default refresh rate threshold
+debug.sf.frame_rate_multiple_threshold=0
