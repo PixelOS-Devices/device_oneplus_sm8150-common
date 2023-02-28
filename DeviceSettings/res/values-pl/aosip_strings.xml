@@ -14,9 +14,7 @@
     <!-- Panel modes -->
     <string name="device_title">Ustawienia OnePlus</string>
     <string name="device_summary">Ustawienia OnePlus dotyczące tego urządzenia</string>
-    <string name="hbm_mode_summary"></string>
     <string name="hbm_mode_title">Tryb wysokiej jasności</string>
-    <string name="dc_mode_summary"></string>
     <string name="dc_mode_title">Redukcja migotania</string>
     <string name="tile_hbm_mode">Tryb wysokiej jasności</string>
     <string name="tile_dc_mode">Redukcja migotania</string>
@@ -60,11 +58,8 @@
     <string name="touchscreen_gesture_action_volume_up">Zwiększ głośność multimediów</string>
     <string name="touchscreen_gesture_action_ambient_display">Pokaż ekran dostosowany do otoczenia</string>
     <!-- Refresh rate -->
-    <string name="refresh_title">Częstotliwość odświeżania ekranu</string>
-    <string name="tile_refresh_rate">Częstotliwość odświeżania ekranu</string>
     <string name="fps_info_title">Nakładka FPS</string>
     <string name="fps_info_summary">Pokaż nakładkę z bieżącymi klatkami na sekundę</string>
-    <string name="panel_mode_info">Wyłączenie tryb panelu wymaga ponownego uruchomienia.</string>
     <!-- Notification slider -->
     <string name="notification_slider_category_title">Suwak powiadomień</string>
     <string name="notification_slider_selection_dialog_title">Akcja</string>

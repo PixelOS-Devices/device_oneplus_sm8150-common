@@ -14,9 +14,8 @@
     <!-- Panel modes -->
     <string name="device_title">Настройки OnePlus</string>
     <string name="device_summary">Отрегулируйте настройки устройства OnePlus</string>
-    <string name="hbm_mode_summary"></string>
     <string name="hbm_mode_title">Режим высокой яркости</string>
-    <string name="tile_hbm_mode">Режим повышенной яркости</string>
+     <string name="tile_hbm_mode">Режим повышенной яркости</string>
 
     <!-- Screen off Gestures : Input -->
     <string name="touchscreen_gesture_settings_title">Экранные жесты</string>
@@ -60,10 +59,6 @@
     <string name="touchscreen_gesture_action_wake_device">Включить устройство</string>
 
     <!-- Refresh rate -->
-    <string name="refresh_title">Частота обновления экрана</string>
-    <string name="tile_refresh_rate">Частота обновления экрана</string>
-    <string name="refresh_rate_summary">Принудительно включить 60Гц или разрешить использовать до 90Гц</string>
-    <string name="refresh_rate_title">Принудительная частота экрана 60Гц</string>
     <string name="fps_info_title">Панель с FPS</string>
     <string name="fps_info_summary">Показать панель с текущими кадрами в секунду</string>
 
@@ -87,7 +82,7 @@
     <string name="vib_strength_title_head">Интенсивность</string>
     <string name="vib_strength_summary_head">Установить интенсивность общей вибрации</string>
     <string name="vibration_warning">Установка слишком высокой прочности может привести к необратимому повреждению</string>
-
+    
     <string name="camera_title">Камера</string>
     <string name="always_on_camera_dialog_title">Спрашивать разрешения включить фроналку</string>
     <string name="always_on_camera_dialog_summary_on">Всегда спрашивать при включении</string>

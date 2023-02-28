@@ -31,6 +31,7 @@ import android.os.IBinder;
 import android.os.Message;
 import android.os.RemoteException;
 import android.os.ServiceManager;
+import android.os.UserHandle;
 import android.service.dreams.DreamService;
 import android.service.dreams.IDreamManager;
 import android.view.Gravity;
@@ -43,6 +44,10 @@ import java.io.FileReader;
 import java.lang.Math;
 
 public class FPSInfoService extends Service {
+    public static final String ACTION_FPS_SERVICE_CHANGED =
+            "com.aosp.device.DeviceSettings.FPS_SERVICE_CHANGED";
+    public static final String EXTRA_FPS_STATE = "running";
+
     private View mView;
     private Thread mCurFPSThread;
     private final String TAG = "FPSInfoService";
@@ -59,7 +64,6 @@ public class FPSInfoService extends Service {
 
         private int mNeededWidth;
         private int mNeededHeight;
-
         private boolean mDataAvail;
 
         private final Handler mCurFPSHandler = new Handler() {
@@ -79,7 +83,7 @@ public class FPSInfoService extends Service {
             super(c);
             final float density = c.getResources().getDisplayMetrics().density;
             final int paddingPx = Math.round(5 * density);
-            setPadding(paddingPx, paddingPx * 4, paddingPx, paddingPx);
+            setPadding(paddingPx, paddingPx, paddingPx, paddingPx);
             setBackgroundColor(Color.argb(0x60, 0, 0, 0));
 
             final int textSize = Math.round(12 * density);
@@ -96,7 +100,7 @@ public class FPSInfoService extends Service {
             mAscent = mOnlinePaint.ascent();
 
             final String maxWidthStr="fps: 60.1";
-            mMaxWidth = (int)mOnlinePaint.measureText(maxWidthStr);
+            mMaxWidth = (int) mOnlinePaint.measureText(maxWidthStr);
 
             updateDisplay();
         }
@@ -128,15 +132,11 @@ public class FPSInfoService extends Service {
             if (!mDataAvail) {
                 return;
             }
-
-            final int LEFT = getWidth()-1;
-
-
-            int y = mPaddingTop - (int)mAscent;
-
-            String s=getFPSInfoString();
-            canvas.drawText(s, LEFT-mPaddingLeft-mMaxWidth,
-                    y-1, mOnlinePaint);
+            final int LEFT = getWidth() - 1;
+            final int y = mPaddingTop - (int)mAscent;
+            canvas.drawText(getFPSInfoString(),
+                    LEFT-mPaddingLeft-mMaxWidth,
+                    y - 1, mOnlinePaint);
         }
 
         void updateDisplay() {
@@ -197,6 +197,7 @@ public class FPSInfoService extends Service {
             WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE,
             PixelFormat.TRANSLUCENT);
         params.gravity = Gravity.LEFT | Gravity.TOP;
+        params.verticalMargin = 0.03f;
         params.setTitle("FPS Info");
 
         startThread();
@@ -273,6 +274,7 @@ public class FPSInfoService extends Service {
         Log.d(TAG, "started CurFPSThread");
         mCurFPSThread = new CurFPSThread(mView.getHandler());
         mCurFPSThread.start();
+        broadcastServiceState(true);
     }
 
     private void stopThread() {
@@ -284,5 +286,13 @@ public class FPSInfoService extends Service {
             } catch (InterruptedException ignored) { }
         }
         mCurFPSThread = null;
+        broadcastServiceState(false);
+    }
+
+    private void broadcastServiceState(boolean started) {
+        Intent intent = new Intent(ACTION_FPS_SERVICE_CHANGED);
+        intent.putExtra(EXTRA_FPS_STATE, started);
+        intent.setFlags(Intent.FLAG_RECEIVER_REGISTERED_ONLY);
+        sendBroadcastAsUser(intent, UserHandle.CURRENT);
     }
 }

@@ -14,9 +14,7 @@
     <!-- Panel modes -->
     <string name="device_title">Cài đặt OnePlus</string>
     <string name="device_summary">Điều chỉnh cài đặt thiết bị cụ thể của OnePlus</string>
-    <string name="hbm_mode_summary"></string>
     <string name="hbm_mode_title">Độ sáng cao</string>
-    <string name="dc_mode_summary"></string>
     <string name="dc_mode_title">DC - Làm mờ</string>
     <string name="tile_hbm_mode">Độ sáng cao</string>
     <string name="tile_dc_mode">DC - Làm mờ</string>
@@ -60,11 +58,8 @@
     <string name="touchscreen_gesture_action_volume_up">Tăng âm lượng phương tiện</string>
     <string name="touchscreen_gesture_action_ambient_display">Hiển thị trên màn hình xem nhanh</string>
     <!-- Refresh rate -->
-    <string name="refresh_title">Làm mới màn hình</string>
-    <string name="tile_refresh_rate">Tốc độ làm tươi màn hình</string>
     <string name="fps_info_title">Lớp phủ FPS</string>
     <string name="fps_info_summary">Hiển thị lớp phủ với các khung hiện tại mỗi giây</string>
-    <string name="panel_mode_info">Vô hiệu hóa chế độ bảng điều khiển yêu cầu khởi động lại.</string>
     <!-- Notification slider -->
     <string name="notification_slider_category_title">Thanh trượt thông báo</string>
     <string name="notification_slider_selection_dialog_title">Tác vụ</string>

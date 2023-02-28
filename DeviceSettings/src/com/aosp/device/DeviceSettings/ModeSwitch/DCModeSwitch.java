@@ -17,14 +17,21 @@
 */
 package com.aosp.device.DeviceSettings.ModeSwitch;
 
-import androidx.preference.Preference;
-import androidx.preference.Preference.OnPreferenceChangeListener;
+import android.content.SharedPreferences;
+import android.content.Context;
+import android.content.Intent;
+import android.os.UserHandle;
 
+import com.aosp.device.DeviceSettings.Constants;
 import com.aosp.device.DeviceSettings.Utils;
 
-public class DCModeSwitch implements OnPreferenceChangeListener {
+public class DCModeSwitch {
 
     private static final String FILE = "/sys/devices/platform/soc/soc:qcom,dsi-display-primary/dc_dim";
+    
+    public static final String ACTION_DCMODE_CHANGED = "com.aosp.device.DeviceSettings.ModeSwitch.DCMODE_CHANGED";
+    public static final String EXTRA_DCMODE_STATE = "enabled";
+    public static final String KEY_DC_SWITCH = "dc";
 
     public static String getFile() {
         if (Utils.fileWritable(FILE)) {
@@ -41,10 +48,13 @@ public class DCModeSwitch implements OnPreferenceChangeListener {
         return Utils.getFileValueAsBoolean(getFile(), false);
     }
 
-    @Override
-    public boolean onPreferenceChange(Preference preference, Object newValue) {
-        Boolean enabled = (Boolean) newValue;
+    public static void setEnabled(boolean enabled, Context context) {
         Utils.writeValue(getFile(), enabled ? "1" : "0");
-        return true;
+        SharedPreferences prefs = Constants.getDESharedPrefs(context);
+        prefs.edit().putBoolean(KEY_DC_SWITCH, enabled).commit();
+        Intent intent = new Intent(ACTION_DCMODE_CHANGED);
+        intent.putExtra(EXTRA_DCMODE_STATE, enabled);
+        intent.setFlags(Intent.FLAG_RECEIVER_REGISTERED_ONLY);
+        context.sendBroadcastAsUser(intent, UserHandle.CURRENT);
     }
 }

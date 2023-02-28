@@ -14,9 +14,7 @@
     <!-- Panel modes -->
     <string name="device_title">OnePlus Einstellungen</string>
     <string name="device_summary">Stelle OnePlus spezifische Handyeinstellungen ein</string>
-    <string name="hbm_mode_summary"></string>
     <string name="hbm_mode_title">Hoher Helligkeit Modus</string>
-    <string name="dc_mode_summary"></string>
     <string name="dc_mode_title">Abdunklung (DC-Dimming)</string>
     <string name="tile_hbm_mode">Hohe Helligkeit Modis</string>
     <string name="tile_dc_mode">Abdunklung (DC-Dimming)</string>
@@ -60,11 +58,8 @@
     <string name="touchscreen_gesture_action_volume_up">Medienlautstärke erhöhen</string>
     <string name="touchscreen_gesture_action_ambient_display">Ambient-Display anzeigen</string>
     <!-- Refresh rate -->
-    <string name="refresh_title">Bildwiederholrate</string>
-    <string name="tile_refresh_rate">Bildwiederholrate</string>
     <string name="fps_info_title">FPS overlay</string>
     <string name="fps_info_summary">Überlagerung mit aktuellen Bildern pro Sekunde anzeigen</string>
-    <string name="panel_mode_info">Die Deaktivierung erfordert einen Neustart.</string>
     <!-- Notification slider -->
     <string name="notification_slider_category_title">Benachrichtigungs-Slider</string>
     <string name="notification_slider_selection_dialog_title">Aktion</string>

@@ -14,9 +14,9 @@
     <!-- Panel modes -->
     <string name="device_title">OnePlus Settings</string>
     <string name="device_summary">Adjust OnePlus specific device settings</string>
-    <string name="hbm_mode_summary"></string>
+    <string name="hbm_mode_summary">Light the display in a brighter than the normally allowed maximum brightness. Using for a long period of time may damage the display</string>
     <string name="hbm_mode_title">High brightness mode</string>
-    <string name="dc_mode_summary"></string>
+    <string name="dc_mode_summary">Useful for people who are sensitive to PWM\nSide effects include eye strain, nausea and migraines.\nEnabling this implies less accurate display colors</string>
     <string name="dc_mode_title">DC-Dimming</string>
     <string name="tile_hbm_mode">High brightness modes</string>
     <string name="tile_dc_mode">DC-Dimming</string>
@@ -63,8 +63,6 @@
     <string name="touchscreen_gesture_action_wake_device">Wake device</string>
 
     <!-- Refresh rate -->
-    <string name="refresh_title">Screen refresh</string>
-    <string name="tile_refresh_rate">Screen refresh rate</string>
     <string name="fps_info_title">FPS Overlay</string>
     <string name="fps_info_summary">Show overlay with with current frames per second</string>
 
